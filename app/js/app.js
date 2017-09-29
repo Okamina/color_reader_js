@@ -10,8 +10,10 @@ class App extends React.Component {
             inputLabel : "Enter a color",
             outputLabel : "Selected color",
             initialColor : "",
-            format1 : "",
-            format2 : ""
+            rgbColor: "",
+            hexColor : "",
+            hslColor : "",
+            backgroung: "",
         }
     }
 
@@ -27,7 +29,7 @@ class App extends React.Component {
         const g = parseInt(hexresult[2], 16).toString();
         const b = parseInt(hexresult[3], 16).toString();
         this.setState({
-            format1 : "rgb("+ r + ", " + g + ", " + b + ")"
+            rgbColor : "rgb("+ r + ", " + g + ", " + b + ")"
         });
     }
 
@@ -50,7 +52,7 @@ class App extends React.Component {
         }
 
         this.setState({
-            format1: "#" + hexR + hexG + hexB
+            hexColor: "#" + hexR + hexG + hexB
         });
     }
 
@@ -88,7 +90,7 @@ class App extends React.Component {
 
         const newHsl = "hsl(" + Math.round(h*360) + "," + Math.round(s*100) + "%," + Math.round(l*100) + "%)";
         this.setState({
-            format2: newHsl
+            hslColor: newHsl
         });
 
     }
@@ -138,7 +140,7 @@ class App extends React.Component {
 
         const newRgb = "rgb("+ Math.round(r) + ", " + Math.round(g) + ", " + Math.round(b) + ")"
         this.setState({
-            format1 : newRgb
+            rgbColor : newRgb
         });
     }
 
@@ -204,7 +206,7 @@ class App extends React.Component {
         }
 
         this.setState({
-            format2: "#" + hexR + hexG + hexB
+            hexColor: "#" + hexR + hexG + hexB
         });
     }
 
@@ -242,7 +244,7 @@ class App extends React.Component {
 
         const hextohsl = "hsl(" + Math.round(h*360) + "," + Math.round(s*100) + "%," + Math.round(l*100) + "%)";
         this.setState({
-            format2: hextohsl
+            hslColor: hextohsl
         });
     }
 
@@ -250,6 +252,7 @@ class App extends React.Component {
         return(
             <div>
                 <h1>Color Reader</h1>
+                <
             </div>
         );
     }
