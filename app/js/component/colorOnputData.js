@@ -9,12 +9,14 @@ export class ColorOutputData extends React.Component {
         const background = this.props.rgbColor;
         return(
             <div className="form-color">
+                <label> Selected color
                 <div className="color-box" style={{ background : background }} ></div>
                 <div className="color-list">
                     <p>{hexColor}</p>
                     <p>{rgbColor}</p>
                     <p>{hslColor}</p>
                 </div>
+                </label>
             </div>
         );
     }

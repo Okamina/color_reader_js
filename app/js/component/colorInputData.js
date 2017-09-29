@@ -6,30 +6,30 @@ export class ColorInputData extends React.Component {
 
 	constructor(props) {
     	super(props);
-		this.getColorInput = this.getColorInput.bind(this);
-	}
+    	this.state = {inputLabel : "Enter a color"}
+		this.getColorInput = this.getColorInput.bind(this);}
 
 	getColorInput(event) {
 		event.preventDefault();
 		const color = this.input.value;
 		if (validationColor(initialColor)) {
-			let hex, hsl, rgb;
+			let hexColor, hslColor, rgbColor;
 			if (color.indexOf('rgb') > -1) {
-				rgb = initialColor;
-				hex = RgbToHex(initialColor);
-				hsl = RgbToHsl(rgb);
+				rgbColor = initialColor;
+				hexColor = RgbToHex(initialColor);
+				hslColor = RgbToHsl(rgbColor);
 			}
 			else if (color.indexOf('#') === 0) {
-				rgb = HexToRgb(initialColor);
-				hex = initialColor;
-				hsl = RgbToHsl(rgb);
+				rgbColor = HexToRgb(initialColor);
+				hexColor = initialColor;
+				hslColor = RgbToHsl(rgbColor);
 			}
 			else {
-				rgb = HslToRgb(initialColor);
-				hex = RgbToHex(rgb);
-				hsl = initialColor;
+				rgbColor = HslToRgb(initialColor);
+				hexColor = RgbToHex(rgbColor);
+				hslColor = initialColor;
 			}
-			this.props.onClick(initialColor, rgb, hex, hsl);
+			this.props.onClick(initialColor, rgbColor, hexColor, hslColor);
 		}
 		else {
 			return alert('Wrong format');
@@ -41,8 +41,9 @@ export class ColorInputData extends React.Component {
 	      <div className="input-color">
 	        <form>
 	          <div>
-	            <label>Enter the color.
+	            <label>{ inputLabel }
 	              <h3>Hex, Rgb or Hsl</h3>
+	            }
 	            </label>
 	          </div>
 	          <input ref={(input) => this.input = input} />
