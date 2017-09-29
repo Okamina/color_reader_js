@@ -27,7 +27,7 @@ class App extends React.Component {
         const g = parseInt(hexresult[2], 16).toString();
         const b = parseInt(hexresult[3], 16).toString();
         this.setState({
-            format1 : "rgb("+ r + ", " + g + ", " + b")"
+            format1 : "rgb("+ r + ", " + g + ", " + b + ")"
         });
     }
 
@@ -50,7 +50,7 @@ class App extends React.Component {
         }
 
         this.setState({
-            format1: "#" + hexR + hexG + hexB;
+            format1: "#" + hexR + hexG + hexB
         });
     }
 
@@ -72,7 +72,7 @@ class App extends React.Component {
 
         let l = (max + min) / 2;
 
-        if delta == 0 {
+        if (delta === 0) {
             let h = 0;
             let s = 0;
         }
@@ -136,7 +136,7 @@ class App extends React.Component {
             let b = (x + m) * 255;
         }
 
-        const newRgb = "rgb("+ Math.round(r) + ", " + Math.round(g) + ", " + Math.round(b)")"
+        const newRgb = "rgb("+ Math.round(r) + ", " + Math.round(g) + ", " + Math.round(b) + ")"
         this.setState({
             format1 : newRgb
         });
@@ -185,13 +185,13 @@ class App extends React.Component {
             let b = (x + m) * 255;
         }
 
-        const newRgb = "rgb("+ Math.round(r) + ", " + Math.round(g) + ", " + Math.round(b)")"
+        const newRgb = "rgb("+ Math.round(r) + ", " + Math.round(g) + ", " + Math.round(b) + ")"
         const rgbString = newRgb.replace(/[^,\d]/g, "");
-        const newString =  rgbString.split(",");
+        const newStringRGB =  rgbString.split(",");
 
-        let hexR = parseInt(newString[0]).toString(16);
-        let hexG = parseInt(newString[1]).toString(16);
-        let hexB = parseInt(newString[2]).toString(16);
+        let hexR = parseInt(newStringRGB[0]).toString(16);
+        let hexG = parseInt(newStringRGB[1]).toString(16);
+        let hexB = parseInt(newStringRGB[2]).toString(16);
 
         if(hexR.length == 1) {
             hexR = "0" + hexR
@@ -204,7 +204,7 @@ class App extends React.Component {
         }
 
         this.setState({
-            format2: "#" + hexR + hexG + hexB;
+            format2: "#" + hexR + hexG + hexB
         });
     }
 
@@ -226,7 +226,7 @@ class App extends React.Component {
 
         let l = (max + min) / 2;
 
-        if delta == 0 {
+        if (delta === 0) {
             let h = 0;
             let s = 0;
         }
@@ -248,32 +248,11 @@ class App extends React.Component {
 
     render() {
         return(
-            <div className="container">
-                <div className="row mt-3">
-                    <div className="col-md-2"></div>
-                    <div className="col-md-3"></div>
-                        <colorInputData
-                            inputLabel={this.state.inputLabel}
-                            initialColor={this.state.initialColor}
-                            newColor={this.newColor.bind(this)}
-                            HexToHsl={this.HexToHsl.bind(this)}
-                            HexToRgb={this.HexToRgb.bind(this)}
-                            RgbToHsl={this.RgbToHsl.bind(this)}
-                            RgbToHex={this.RgbToHex.bind(this)}
-                            HslToHex={this.HslToHex.bind(this)}
-                            HexToRgb={this.HexToRgb.bind(this)}
-                        />
-                    <div className="col-md-3"></div>
-                        <ColorOutputData
-                            outputLabel={this.state.outputLabel}
-                            initialColor={this.state.initialColor}
-                            format1={this.state.format1}
-                            format2={this.state.format2}
-                        />
-                    <div className="col-md-4"></div>
+            <div>
+                <h1>Color Reader</h1>
             </div>
         );
     }
 }
 
-render(<App />, window.domcunt.getElementById('app'));
+React.render(<App/>, window.domcunt.getElementById('app'));
