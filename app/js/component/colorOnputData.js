@@ -1,52 +1,21 @@
 import React from 'react';
-import PropTypes from "prop-types";
 
 export class ColorOutputData extends React.Component {
-    constructor(props){
-        super();
-        this.state = {
-            ResLabel: props.resultLabel
-        }
-    }
+    
     render() {
+        const rgbColor = this.props.rgbColor;
+        const hexColor = this.props.rgbColor;
+        const hslColor = this.props.rgbColor;
+        const background = this.props.rgbColor;
         return(
-            <div className="form-group" style={{textAlign: "center"}}>
-                <div className="row">
-                    <div className="col-md-12">
-                        <h6>{this.state.ResLabel}</h6>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-2">
-                    </div>
-                    <div className="col-md-8" style={{
-                        backgroundColor: this.props.initialColor,
-                        border: "2px solid black",
-                        height: "100px",
-                        width: "100px",
-                    }}>
-                    </div>
-                    <div className="col-md-2">
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-12">
-                        {this.props.format1}
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-12">
-                        {this.props.format2}
-                    </div>
+            <div className="form-color">
+                <div className="color-box" style={{ background : background }} ></div>
+                <div className="color-list">
+                    <p>{hexColor}</p>
+                    <p>{rgbColor}</p>
+                    <p>{hslColor}</p>
                 </div>
             </div>
         );
     }
 }
-
-Result.PropTypes = {
-    outputLabel: PropTypes.string,
-    initialColor: PropTypes.string,
-    format1: PropTypes.string,
-    format2: PropTypes.string
-};

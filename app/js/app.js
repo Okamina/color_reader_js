@@ -13,7 +13,7 @@ class App extends React.Component {
             rgbColor: "",
             hexColor : "",
             hslColor : "",
-            backgroung: "",
+            background: "",
         }
     }
 

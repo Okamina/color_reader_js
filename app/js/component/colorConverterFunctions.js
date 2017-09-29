@@ -56,6 +56,11 @@ function RgbToHsl(colorRbg){
 }
 
 function HexToRgb(colorHex){
+    if (colorHex.length === 4){
+        const shortHexToHex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+        colorHex = "#" + shortHexToHex[0] + shortHexToHex[0] + shortHexToHex[1] + shortHexToHex[1] + shortHexToHex[2] + shortHexToHex[2];
+    }
+
     const hexresult = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(colorHex);
     const r = parseInt(hexresult[1], 16).toString();
     const g = parseInt(hexresult[2], 16).toString();
