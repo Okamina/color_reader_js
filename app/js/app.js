@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '/.index.css';
 import { ColorInputData } from './component/colorInputData.js';
 import { ColorOutputData } from './component/colorOnputData.js';
 

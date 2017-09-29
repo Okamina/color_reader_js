@@ -38,11 +38,11 @@ export class ColorInputData extends React.Component {
 
 	    render() {
 	    return (
-	      <div className="input-color">
-	        <form>
+	      <div className="input-color" style="width: 30%, float: left,">
+	        <form style="padding-top: 15px,">
 	          <div>
 	            <label>{ inputLabel }
-	              <h3>Hex, Rgb or Hsl</h3>
+	              <h3 style="color:gray">Hex, Rgb or Hsl</h3>
 	            }
 	            </label>
 	          </div>
