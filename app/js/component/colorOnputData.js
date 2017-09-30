@@ -4,9 +4,9 @@ export class ColorOutputData extends React.Component {
     
     render() {
         const rgbColor = this.props.rgbColor;
-        const hexColor = this.props.rgbColor;
-        const hslColor = this.props.rgbColor;
-        const background = this.props.rgbColor;
+        const hexColor = this.props.hexColor;
+        const hslColor = this.props.hslColor;
+        const background = this.props.background;
         return(
             <div className="form-color" style="float: left,">
                 <label> Selected color
