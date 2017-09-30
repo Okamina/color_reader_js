@@ -5,4 +5,4 @@ export function validateColor(value){
         const rgbType = /^rgb\((\d{1,3})\,(\d{1,3})\,(\d{1,3})\)$/i;
 
         return hexType.test(value) || hslType.test(value) || rgbType.test(value)
-	}
+}
