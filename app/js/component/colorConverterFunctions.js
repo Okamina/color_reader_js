@@ -51,7 +51,7 @@ function RgbToHsl(colorRbg){
         h *= 60;
         }
 
-    return "hsl(" + Math.round(h*360) + "," + Math.round(s*100) + "%," + Math.round(l*100) + "%)";
+    return "hsl(" + Math.round(h) + "," + Math.round(s) + "%," + Math.round(l) + "%)";
 
 }
 
