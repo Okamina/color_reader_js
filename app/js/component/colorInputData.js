@@ -6,12 +6,12 @@ export class ColorInputData extends React.Component {
 
 	constructor(props) {
     	super(props);
-    	this.state = {inputLabel : "Enter a color"}
-		this.getColorInput = this.getColorInput.bind(this);}
+	this.getColorInput = this.getColorInput.bind(this);
+	}
 
 	getColorInput(event) {
 		event.preventDefault();
-		const color = this.input.value;
+		const initialColor = this.input.value;
 		if (validationColor(initialColor)) {
 			let hexColor, hslColor, rgbColor;
 			if (color.indexOf('rgb') > -1) {
@@ -41,7 +41,7 @@ export class ColorInputData extends React.Component {
 	      <div className="input-color" style="width: 30%, float: left,">
 	        <form style="padding-top: 15px,">
 	          <div>
-	            <label>{ inputLabel }
+	            <label>Enter a color
 	              <h3 style="color:gray">Hex, Rgb or Hsl</h3>
 	            }
 	            </label>
